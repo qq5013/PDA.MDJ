@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Result.cs" />
-    <Compile Include="Model\SelectionTask.cs" />
+    <Compile Include="Model\RestTask.cs" />
     <Compile Include="Service\HttpDataService.cs" />
     <Compile Include="Service\XmlDataService.cs" />
     <Compile Include="Util\ConfigUtil.cs" />

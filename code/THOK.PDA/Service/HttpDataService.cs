@@ -13,7 +13,7 @@ namespace THOK.PDA.Service
     {
         HttpUtil util = new HttpUtil();
 
-        public DataTable SearchOutAbnormalTask(string methodName)
+        public DataTable SearchOutTask(string methodName)
         {
             string msg = util.GetDataFromServer(methodName);
             Result r = JsonConvert.DeserializeObject<Result>(msg);
@@ -21,19 +21,19 @@ namespace THOK.PDA.Service
             DataTable table = BuildTaskTable();
             if (r.IsSuccess)
             {
-                for (int i = 0; i < r.SelectionTasks.Length; i++)
+                for (int i = 0; i < r.RestTasks.Length; i++)
                 {
                     DataRow row = table.NewRow();
-                    row["TaskID"] = r.SelectionTasks[i].TaskID;
-                    row["CellName"] = r.SelectionTasks[i].CellName;
-                    row["ProductName"] = r.SelectionTasks[i].ProductName;
-                    row["OrderID"] = r.SelectionTasks[i].OrderID;
-                    row["OrderType"] = r.SelectionTasks[i].OrderType;
-                    row["Status"] = r.SelectionTasks[i].Status;
-                    row["Quantity"] = r.SelectionTasks[i].Quantity;
-                    row["TaskQuantity"] = r.SelectionTasks[i].TaskQuantity;
-                    row["PieceQuantity"] = r.SelectionTasks[i].PieceQuantity;
-                    row["BarQuantity"] = r.SelectionTasks[i].BarQuantity;
+                    row["TaskID"] = r.RestTasks[i].TaskID;
+                    row["CellName"] = r.RestTasks[i].CellName;
+                    row["ProductName"] = r.RestTasks[i].ProductName;
+                    row["OrderID"] = r.RestTasks[i].OrderID;
+                    row["OrderType"] = r.RestTasks[i].OrderType;
+                    row["Status"] = r.RestTasks[i].Status;
+                    row["Quantity"] = r.RestTasks[i].Quantity;
+                    row["TaskQuantity"] = r.RestTasks[i].TaskQuantity;
+                    row["PieceQuantity"] = r.RestTasks[i].PieceQuantity;
+                    row["BarQuantity"] = r.RestTasks[i].BarQuantity;
                     table.Rows.Add(row);
                 }
                 return table;

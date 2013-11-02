@@ -16,18 +16,18 @@ namespace THOK.PDA.View
 {
     public partial class DetailForm : Form
     {
-        SelectionTask task = null;
+        RestTask task = null;
         HttpDataService httpDataService = new HttpDataService();
 
-        string billType = "";
+        string positionType = "";
 
         public int Index;
 
-        public DetailForm(SelectionTask sTask, string billType)
+        public DetailForm(RestTask sTask, string positionType)
         {
             InitializeComponent();
             this.task = sTask;
-            this.billType = billType;
+            this.positionType = positionType;
         }
 
         private void BillDetailForm_Load(object sender, EventArgs e)
@@ -55,12 +55,12 @@ namespace THOK.PDA.View
             {
                 if (SystemCache.ConnetionType == "NetWork")
                 {
-                    SelectionTask st = new SelectionTask();
+                    RestTask st = new RestTask();
                     st.TaskID = Convert.ToInt32(lbID.Text);
                     result = httpDataService.FinishTask("OutFinishTask/?taskID=" + st.TaskID);
                 }
                 MessageBox.Show(result);
-                TaskForm baseTaskForm = new TaskForm(this.billType);
+                TaskForm baseTaskForm = new TaskForm(this.positionType);
                 if (this.Index > 0)
                 {
                     baseTaskForm.index = this.Index;
@@ -106,7 +106,7 @@ namespace THOK.PDA.View
         private void btnBack_Click(object sender, EventArgs e)
         {
             WaitCursor.Set();
-            TaskForm task = new TaskForm(this.billType);
+            TaskForm task = new TaskForm(this.positionType);
             task.Show();
             
         }

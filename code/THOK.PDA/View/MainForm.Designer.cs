@@ -81,7 +81,7 @@
             // 
             this.btnAbnormalOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnAbnormalOut.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAbnormalOut.Location = new System.Drawing.Point(49, 40);
+            this.btnAbnormalOut.Location = new System.Drawing.Point(49, 131);
             this.btnAbnormalOut.Name = "btnAbnormalOut";
             this.btnAbnormalOut.Size = new System.Drawing.Size(216, 85);
             this.btnAbnormalOut.TabIndex = 0;
@@ -92,7 +92,7 @@
             // 
             this.btnSmallOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnSmallOut.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSmallOut.Location = new System.Drawing.Point(49, 131);
+            this.btnSmallOut.Location = new System.Drawing.Point(49, 40);
             this.btnSmallOut.Name = "btnSmallOut";
             this.btnSmallOut.Size = new System.Drawing.Size(216, 85);
             this.btnSmallOut.TabIndex = 7;

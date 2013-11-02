@@ -20,20 +20,20 @@ namespace THOK.PDA.View
             InitializeComponent();
             SystemCache.MainFrom = this;
         }
-        private void btnAbnormalOut_Click(object sender, EventArgs e)
-        {
-            string billType = "abnormality";
-            TaskFormShow(billType);
-        }
         private void btnSmallOut_Click(object sender, EventArgs e)
         {
-            string billType = "small";
-            TaskFormShow(billType);
+            string positionType = "03";
+            TaskFormShow(positionType);
         }
-        private void TaskFormShow(string billType)
+        private void btnAbnormalOut_Click(object sender, EventArgs e)
+        {
+            string positionType = "04";
+            TaskFormShow(positionType);
+        }
+        private void TaskFormShow(string positionType)
         {
             WaitCursor.Set();
-            TaskForm tFrom = new TaskForm(billType);
+            TaskForm tFrom = new TaskForm(positionType);
             tFrom.Show();
             this.Visible = false;
         }

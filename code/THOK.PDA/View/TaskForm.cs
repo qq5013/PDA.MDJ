@@ -18,28 +18,29 @@ namespace THOK.PDA.View
     {
         HttpDataService httpDataService = new HttpDataService();
         DataTable detailTable = null;
-        string billType = "";
+        string positionType = "";
         public int index;
 
-        public TaskForm(string billType)
+        public TaskForm(string positionType)
         {
             InitializeComponent();
-            this.billType = billType;
+            this.positionType = positionType;
         }
 
         private void BaseTaskForm_Load(object sender, EventArgs e)
         {
             string method = string.Empty;
-            if (billType == "abnormality")
-            {
-                method = "GetAbnormalOutBillTask";
-            }
-            else if (billType == "small")
+            
+            if (positionType == "03")
             {
                 method = "GetSmallOutTask";
             }
+            else if (positionType == "04")
+            {
+                method = "GetAbnormalOutBillTask";
+            }
 
-            detailTable = httpDataService.SearchOutAbnormalTask(method);
+            detailTable = httpDataService.SearchOutTask(method);
 
             this.dgInfo.DataSource = detailTable;
             if (detailTable.Rows.Count == 0)
@@ -107,7 +108,7 @@ namespace THOK.PDA.View
             WaitCursor.Set();
             try
             {
-                SelectionTask task = new SelectionTask();
+                RestTask task = new RestTask();
                 if (SystemCache.ConnetionType == "NetWork")
                 {
                     string taskId = this.dgInfo[this.dgInfo.CurrentCell.RowNumber, 0].ToString();
@@ -122,7 +123,7 @@ namespace THOK.PDA.View
                     task.ProductName = dr[0]["ProductName"].ToString();
                     task.Status = dr[0]["Status"].ToString();
                 }
-                DetailForm billDetailForm = new DetailForm(task,billType);
+                DetailForm billDetailForm = new DetailForm(task, positionType);
                 billDetailForm.Index = this.index;
                 billDetailForm.Show();
                 this.Close();

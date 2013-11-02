@@ -4,7 +4,7 @@ using System.Text;
 
 namespace THOK.PDA.Model
 {
-   public class SelectionTask
+   public class RestTask
     {
         public int TaskID { get; set; }
         public string TaskType { get; set; }
