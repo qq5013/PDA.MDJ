@@ -72,7 +72,6 @@ namespace THOK.PDA.View
                 WaitCursor.Restore();
                 MessageBox.Show("参数保存失败!请重启系统");
             }
-            
         }
 
         private void btnStart_Click(object sender, EventArgs e)

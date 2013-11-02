@@ -18,9 +18,7 @@ namespace THOK.PDA.View
     {
         RestTask task = null;
         HttpDataService httpDataService = new HttpDataService();
-
         string positionType = "";
-
         public int Index;
 
         public DetailForm(RestTask sTask, string positionType)
