@@ -35,7 +35,7 @@ namespace THOK.PDA.View
             if (SystemCache.ConnetionType == "NetWork")
             {
                 this.lbID.Text = task.TaskID.ToString();
-                this.lbOrderID.Text=task.OrderID;
+                this.lbOrderID.Text = task.OrderID;
                 this.lbCellCode.Text = task.CellName;
                 this.lbProductName.Text = task.ProductName;
                 this.lbPieceQuantity.Text = task.PieceQuantity.ToString();
@@ -44,6 +44,11 @@ namespace THOK.PDA.View
                 this.lbOrderType.Text = task.OrderType;
 
                 WaitCursor.Restore();
+            }
+            else
+            {
+                WaitCursor.Restore();
+                MessageBox.Show("请检查配置！连接类型是否为：NetWork");
             }
         }
 
@@ -59,6 +64,12 @@ namespace THOK.PDA.View
                     st.TaskID = Convert.ToInt32(lbID.Text);
                     result = httpDataService.FinishTask("FinishOutTask/?taskID=" + st.TaskID);
                 }
+                else
+                {
+                    WaitCursor.Restore();
+                    MessageBox.Show("请检查配置！连接类型是否为：NetWork");
+                    return;
+                }
                 MessageBox.Show(result);
                 TaskForm baseTaskForm = new TaskForm(this.positionType);
                 if (this.Index > 0)
@@ -72,7 +83,7 @@ namespace THOK.PDA.View
             catch (Exception ex)
             {
                 WaitCursor.Restore();
-                MessageBox.Show(result + " " + ex.Message);
+                MessageBox.Show("报错："+result + "，系统错误：" + ex.Message);
                 this.Close();
                 SystemCache.MainFrom.Visible = true;
             }

@@ -99,6 +99,7 @@
             // 
             // txtServer
             // 
+            this.txtServer.Enabled = false;
             this.txtServer.Location = new System.Drawing.Point(133, 123);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(144, 23);
@@ -106,6 +107,7 @@
             // 
             // txtDatabase
             // 
+            this.txtDatabase.Enabled = false;
             this.txtDatabase.Location = new System.Drawing.Point(133, 152);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(144, 23);
@@ -121,6 +123,7 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.Enabled = false;
             this.txtPwd.Location = new System.Drawing.Point(133, 214);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(144, 23);
@@ -136,6 +139,7 @@
             // 
             // txtUid
             // 
+            this.txtUid.Enabled = false;
             this.txtUid.Location = new System.Drawing.Point(133, 183);
             this.txtUid.Name = "txtUid";
             this.txtUid.Size = new System.Drawing.Size(144, 23);
@@ -178,8 +182,8 @@
             // 
             // cbConType
             // 
-            this.cbConType.Items.Add("网络连接");
-            this.cbConType.Items.Add("USB连接");
+            this.cbConType.Enabled = false;
+            this.cbConType.Items.Add("NetWork");
             this.cbConType.Location = new System.Drawing.Point(134, 63);
             this.cbConType.Name = "cbConType";
             this.cbConType.Size = new System.Drawing.Size(143, 23);

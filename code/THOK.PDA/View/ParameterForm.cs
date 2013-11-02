@@ -55,8 +55,6 @@ namespace THOK.PDA.View
                 connetionList.Add("ConnectionString", connetionString);
                 configUtil.SaveConfig("Connection", connetionList);
 
-
-
                 Dictionary<string, string> typeList = new Dictionary<string, string>();
                 typeList.Add("Type", cbConType.SelectedItem.ToString());
                 configUtil.SaveConfig("ConnetionType", typeList);

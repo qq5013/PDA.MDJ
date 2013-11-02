@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="gb2312"?>
 <Config>
   <Connection>
-    <ConnectionString name="ConnectionString" value="server=10.57.64.171;database=wms_rfid_test;uid=sa;pwd=123456" />
+    <ConnectionString name="ConnectionString" value="server=10.57.64.171;database=wms_rfid;uid=sa;pwd=******" />
   </Connection>
   <ConnetionType>
     <Type name="Type" value="NetWork" />
