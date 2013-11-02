@@ -33,9 +33,17 @@ namespace THOK.PDA.View
         private void TaskFormShow(string positionType)
         {
             WaitCursor.Set();
-            TaskForm tFrom = new TaskForm(positionType);
-            tFrom.Show();
-            this.Visible = false;
+            try
+            {
+                TaskForm tFrom = new TaskForm(positionType);
+                tFrom.Show();
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                WaitCursor.Restore();
+                MessageBox.Show(ex.Message);
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
