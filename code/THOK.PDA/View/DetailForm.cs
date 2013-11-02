@@ -117,7 +117,7 @@ namespace THOK.PDA.View
             WaitCursor.Set();
             TaskForm task = new TaskForm(this.positionType);
             task.Show();
-            
+            this.Close();
         }
     }
 }
