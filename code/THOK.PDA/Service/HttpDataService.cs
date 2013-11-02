@@ -46,7 +46,7 @@ namespace THOK.PDA.Service
 
         public string FinishTask(string methodName)
         {
-            string error = "完成成功！";
+            string error = "任务已完成！";
             string msg = util.GetDataFromServer(methodName);
             Result r = JsonConvert.DeserializeObject<Result>(msg);
             if (!r.IsSuccess)

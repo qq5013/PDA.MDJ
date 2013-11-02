@@ -29,16 +29,7 @@ namespace THOK.PDA.View
 
         private void BaseTaskForm_Load(object sender, EventArgs e)
         {
-            string method = string.Empty;
-            
-            if (positionType == "03")
-            {
-                method = "GetSmallOutTask";
-            }
-            else if (positionType == "04")
-            {
-                method = "GetAbnormalOutBillTask";
-            }
+            string method = "GetOutTask/?positionType=" + positionType;
 
             detailTable = httpDataService.SearchOutTask(method);
 

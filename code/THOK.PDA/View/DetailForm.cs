@@ -57,7 +57,7 @@ namespace THOK.PDA.View
                 {
                     RestTask st = new RestTask();
                     st.TaskID = Convert.ToInt32(lbID.Text);
-                    result = httpDataService.FinishTask("OutFinishTask/?taskID=" + st.TaskID);
+                    result = httpDataService.FinishTask("FinishOutTask/?taskID=" + st.TaskID);
                 }
                 MessageBox.Show(result);
                 TaskForm baseTaskForm = new TaskForm(this.positionType);
