@@ -83,8 +83,8 @@ namespace THOK.PDA.View
             WaitCursor.Set();
             try
             {
-                MainForm mf = new MainForm();
-                mf.Show();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
                 this.Close();
                 WaitCursor.Restore();
             }

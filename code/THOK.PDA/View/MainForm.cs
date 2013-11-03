@@ -35,8 +35,8 @@ namespace THOK.PDA.View
             WaitCursor.Set();
             try
             {
-                TaskForm tFrom = new TaskForm(positionType);
-                tFrom.Show();
+                TaskForm taskFrom = new TaskForm(positionType);
+                taskFrom.Show();
                 this.Visible = false;
             }
             catch (Exception ex)
